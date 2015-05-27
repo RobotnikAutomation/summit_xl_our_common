@@ -4,16 +4,9 @@
   <version>0.0.0</version>
   <description>The summit_xl_our_description package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
-  <!-- Example:  -->
-  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="trurl@todo.todo">trurl</maintainer>
+  <maintainer email="info@robotnik.es">Robotnik</maintainer>
 
-
-  <!-- One license tag required, multiple allowed, one license per tag -->
-  <!-- Commonly used license strings: -->
-  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
+  <license>BSD</license>
 
 
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
@@ -21,11 +14,7 @@
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/summit_xl_our_description</url> -->
 
-
-  <!-- Author tags are optional, mutiple are allowed, one per tag -->
-  <!-- Authors do not have to be maintianers, but could be -->
-  <!-- Example: -->
-  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <author email="info@robotnik.es">Robotnik</author> -->
 
 
   <!-- The *_depend tags are used to specify dependencies -->
@@ -44,11 +33,13 @@
   <build_depend>std_msgs</build_depend>
   <build_depend>std_srvs</build_depend>
   <build_depend>summit_xl_description</build_depend>
+  <build_depend>robotnik_sensors</build_depend>
   <build_depend>tf</build_depend>
   <run_depend>OUR-I</run_depend>
   <run_depend>std_msgs</run_depend>
   <run_depend>std_srvs</run_depend>
   <run_depend>summit_xl_description</run_depend>
+  <run_depend>robotnik_sensors</run_depend>
   <run_depend>tf</run_depend>
 
 

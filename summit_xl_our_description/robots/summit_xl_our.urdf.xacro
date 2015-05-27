@@ -8,10 +8,11 @@
 	<!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
 	<!-- Import Summit XL base -->
-	<xacro:include filename="$(find summit_xl_description)/robots/summit_xl_nocam.urdf.xacro" />
-
+	<!-- xacro:include filename="$(find summit_xl_description)/robots/summit_xl_nocam.urdf.xacro" / -->
+	<xacro:include filename="$(find summit_xl_description)/robots/examples/summit_xl_our.urdf.xacro" />
+	
 	<!-- Import Mico Arm -->
-	<xacro:include filename="$(find OUR-I)/robots/our-i.urdf.xacro" />
+	<xacro:include filename="$(find OUR-I)/robots/examples/our-i.urdf.xacro" />
 
 	<!-- Gazebo ros control plugins -->
 	<!-- xacro:ros_control/ -->
@@ -30,7 +31,7 @@
 	  name="j_base_arm"
       type="fixed">
     <origin
-      xyz="0.200 0.0 0.100"
+      xyz="-0.030 0.0 0.275"
       rpy="0.0 0.0 0.0" />
     <parent
       link="base_link" />
