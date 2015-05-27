@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="summit_xl_our" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+
+	<!-- ***************** -->
+	<!-- Imported elements -->
+	<!-- ***************** -->
+	
+	<!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
+
+	<!-- Import Summit XL base -->
+	<xacro:include filename="$(find summit_xl_description)/robots/summit_xl_nocam.urdf.xacro" />
+
+	<!-- Import Mico Arm -->
+	<xacro:include filename="$(find OUR-I)/robots/our-i.urdf.xacro" />
+
+	<!-- Gazebo ros control plugins -->
+	<!-- xacro:ros_control/ -->
+
+    <gazebo>
+      <plugin name="ros_control" filename="libgazebo_ros_control.so">		
+        <robotNamespace>/summit_xl_our</robotNamespace>
+        <robotParam>robot_description</robotParam>
+        <controlPeriod>0.001</controlPeriod> 
+	    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin>
+    </gazebo>
+
+	<!-- Fix arm to robot base platform -->
+	<joint
+	  name="j_base_arm"
+      type="fixed">
+    <origin
+      xyz="0.200 0.0 0.100"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="base_link" />
+    <child
+      link="our_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+</robot>
