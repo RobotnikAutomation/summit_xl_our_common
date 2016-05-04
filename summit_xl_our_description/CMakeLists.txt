@@ -5,7 +5,7 @@ project(summit_xl_our_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  OUR-I
+  #OUR-I
   std_msgs
   std_srvs
   summit_xl_description

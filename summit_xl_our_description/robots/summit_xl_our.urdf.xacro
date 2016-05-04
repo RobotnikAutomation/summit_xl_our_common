@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="summit_xl_our" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+<robot name="summit_hl_our" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
 
 	<!-- ***************** -->
 	<!-- Imported elements -->
@@ -8,7 +8,7 @@
 	<!-- First we import all posible elements defined in the urdf.xacro files. All these elements are defined as macro:xacros -->
 
 	<!-- Import summit XL base elements -->
-	<xacro:include filename="$(find summit_xl_description)/urdf/bases/summit_xl_base.urdf.xacro" />
+	<xacro:include filename="$(find summit_xl_description)/urdf/bases/summit_xl_hl_base.urdf.xacro" />
   
 	<!-- Import summit XL wheels -->
 	<xacro:include filename="$(find summit_xl_description)/urdf/wheels/rubber_wheel.urdf.xacro" />
@@ -20,11 +20,11 @@
 	<xacro:include filename="$(find robotnik_sensors)/urdf/all_sensors.urdf.xacro" />
 
 	<!-- Import specific sensor -->
-	<xacro:include filename="$(find robotnik_sensors)/urdf/gps_with_mast.urdf.xacro" />
+	<!--xacro:include filename="$(find robotnik_sensors)/urdf/gps_with_mast.urdf.xacro" /-->
 	
 	
-	<!-- Import Mico Arm -->
-	<xacro:include filename="$(find our_arm_description)/robots/examples/our-i.urdf.xacro" />
+	<!-- Import OUR Arm -->
+	<xacro:include filename="$(find our_arm_description)/robots/OUR-II.URDF" />
   
   
 	<!-- ***************** -->
@@ -50,7 +50,7 @@
 	<!-- Here we create the robot elements using the xacro:macros imported at the beggining of this file -->
 
 	<!-- Summit XL base -->
-	<xacro:summit_xl_base name="summit_xl" publish_bf="true" hq="${hq}" />
+	<xacro:summit_xl_hl_base name="summit_xl_hl	" publish_bf="true" hq="${hq}" />
   
 	<!-- Gazebo ros control pluggins -->
 	<xacro:ros_control/>
@@ -83,9 +83,13 @@
 
 
 	<!-- SENSORS -->    
-	<xacro:sensor_hokuyo_utm30lx name="hokuyo" parent="base_link">
-		<origin xyz="0.0 0.0 0.33" rpy="0 0 0"/>
-	</xacro:sensor_hokuyo_utm30lx>
+	<xacro:sensor_hokuyo_urg04lx name="hokuyo_front" parent="base_link">
+		<origin xyz="0.131923 0.0 0.371673" rpy="0 0 0"/>
+	</xacro:sensor_hokuyo_urg04lx>
+	
+	<!--xacro:sensor_hokuyo_urg04lx name="hokuyo_front" parent="base_link">
+		<origin xyz="0.131923 0.0 0.371673" rpy="0 0 0"/>
+	</xacro:sensor_hokuyo_urg04lx-->
   
 <!--
 	<xacro:sensor_hokuyo_urg04lx name="hokuyo1" parent="base_link">
@@ -99,16 +103,16 @@
 
 	<xacro:sensor_axis_m5013 name="camera_rear" parent="base_link">
 		<!-- origin xyz="-0.22 0 0.275" rpy="0 0 0"/ -->
-		<origin xyz="-0.35 0 0.475" rpy="${PI/2} 0.0 -${PI/2}"/>
+		<origin xyz="-0.315077 0 0.445633" rpy="${PI/2} 0.0 -${PI/2}"/>
 	</xacro:sensor_axis_m5013>
   
 	<xacro:sensor_imu name="imu" parent="base_link">
 		<origin xyz="-0.18 0.0 0.170" rpy="0 0 0"/>
 	</xacro:sensor_imu>
   
-	<xacro:sensor_gps_with_mast name="gps" parent="base_link">
+	<!--xacro:sensor_gps_with_mast name="gps" parent="base_link">
 		<origin xyz="-0.22 0.155 0.625" rpy="0 0 0"/>
-	</xacro:sensor_gps_with_mast>
+	</xacro:sensor_gps_with_mast-->
 
 <!--
 	<xacro:sensor_kinect name="kinect" parent="base_link">
@@ -138,34 +142,34 @@
   
 	<!-- Fix arm to robot base platform -->
 	<joint
-	  name="j_base_arm"
+	  name="our_base_arm"
       type="fixed">
     <origin
-      xyz="-0.030 0.0 0.275"
+      xyz="0.005423 0.0 0.366673"
       rpy="0.0 0.0 0.0" />
     <parent
       link="base_link" />
     <child
-      link="our_base_link" />
+      link="base" />
     <axis
       xyz="0 0 0" />
   </joint>
 
 
    <!-- Water tank -->
-   <joint name="water_tank_fix_joint" type="fixed">
+   <joint name="water_tank_base_joint" type="fixed">
       <parent link="base_link"/>
-      <child link="water_tank_link"/>
+      <child link="water_tank_base_link"/>
 	  <origin
-         xyz="-0.25 0.0 0.275"
+         xyz="0.0 0.0 0.0"
          rpy="0.0 0.0 0.0" />   
 	</joint>
 	
-	<link name="water_tank_link">
+	<link name="water_tank_base_link">
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry>
-	     		<mesh filename="package://summit_xl_our_description/meshes/water_tank.stl"/>
+	     		<mesh filename="package://summit_xl_our_description/meshes/tank_arm_structure.dae"/>
 			</geometry>
 			<!-- geometry>
 				<box size="0.1 0.1 0.08"/>
@@ -175,7 +179,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry>
-	     		<mesh filename="package://summit_xl_our_description/meshes/water_tank.stl"/>
+	     		<mesh filename="package://summit_xl_our_description/meshes/tank_arm_structure.dae"/>
 			</geometry>
 		</visual>
 
@@ -185,6 +189,34 @@
 			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
 		</inertial>
 	</link>
+	
+	<joint name="rp_lidar_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="rp_lidar_link"/>
+	  <origin
+         xyz="-0.348077 -0.014359 0.331673"
+         rpy="0.0 0.0 0.0" />   
+	</joint>
+	<link name="rp_lidar_link">
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+	     		<box size="0.07 0.0985 0.06"/>
+			</geometry>
+			<!-- geometry>
+				<box size="0.1 0.1 0.08"/>
+			</geometry -->
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+	     		<box size="0.07 0.0985 0.06"/>
+			</geometry>
+		</visual>
+
+	</link>
+	
 
 </robot>
 
