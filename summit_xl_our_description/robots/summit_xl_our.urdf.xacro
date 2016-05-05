@@ -142,11 +142,9 @@
   
 	<!-- Fix arm to robot base platform -->
 	<joint
-	  name="our_base_arm"
-      type="fixed">
+	  name="our_base_arm" type="fixed">
     <origin
-      xyz="0.005423 0.0 0.366673"
-      rpy="0.0 0.0 0.0" />
+      xyz="0.005423 0.0 0.366673" rpy="0.0 0.0 1.58" />
     <parent
       link="base_link" />
     <child
@@ -216,6 +214,34 @@
 		</visual>
 
 	</link>
+	
+	<!--joint name="effector_joint" type="fixed">
+      <parent link="link11"/>
+      <child link="effector_link"/>
+	  <origin
+         xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0" />   
+	</joint-->
+	<!--link name="effector_link">
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+	     		<mesh filename="package://summit_xl_our_description/meshes/effector-fumigator.dae"/>
+			</geometry>
+			
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+	     		<mesh filename="package://summit_xl_our_description/meshes/effector-fumigator.dae"/>
+			</geometry>
+		</visual>
+
+	</link-->
+	
+	<!--xacro:sensor_hokuyo_urg04lx name="hokuyo_arm" parent="effector_link">
+		<origin xyz="-0.08 -0.0138560 0.137" rpy="-0.785 0 0"/>
+	</xacro:sensor_hokuyo_urg04lx-->
 	
 
 </robot>
