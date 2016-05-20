@@ -148,7 +148,7 @@
     <parent
       link="base_link" />
     <child
-      link="base" />
+      link="our_base" />
     <axis
       xyz="0 0 0" />
   </joint>
@@ -215,13 +215,13 @@
 
 	</link>
 	
-	<!--joint name="effector_joint" type="fixed">
-      <parent link="link11"/>
+	<joint name="effector_joint" type="fixed">
+      <parent link="our_link11"/>
       <child link="effector_link"/>
 	  <origin
-         xyz="0.0 0.039 0.0" rpy="0.0 0.0 0.0" />   
-	</joint-->
-	<!--link name="effector_link">
+         xyz="0.0 0.039 0.0" rpy="0.0 1.58 1.58" />   
+	</joint>
+	<link name="effector_link">
 		<collision>
 			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
 			<geometry>
@@ -237,11 +237,35 @@
 			</geometry>
 		</visual>
 
-	</link-->
+	</link>
 	
-	<!--xacro:sensor_hokuyo_urg04lx name="hokuyo_arm" parent="effector_link">
-		<origin xyz="-0.08 -0.0138560 0.137" rpy="-0.785 0 0"/>
-	</xacro:sensor_hokuyo_urg04lx-->
+	<xacro:sensor_hokuyo_urg04lx name="hokuyo_arm" parent="effector_link">
+		<origin xyz="-0.0327 -0.057 0.137" rpy="${PI/2.0} 0 ${-PI/6.0}"/>
+	</xacro:sensor_hokuyo_urg04lx>
+	
+	<joint name="arm_camera_joint" type="fixed">
+      <parent link="effector_link"/>
+      <child link="arm_camera"/>
+	  <origin
+         xyz="-0.0235 0.040703 0.12365" rpy="0.0 0.0 0.0" />   
+	</joint>
+	<link name="arm_camera">
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+	     		<cylinder radius="0.025" length="0.02"/>
+			</geometry>
+			
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+	     		<cylinder radius="0.025" length="0.02"/>
+			</geometry>
+		</visual>
+
+	</link>
 	
 
 </robot>

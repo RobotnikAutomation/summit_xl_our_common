@@ -1,7 +1,5 @@
-<robot
-  name="our_model">
-  <link
-    name="base">
+<robot name="our_model">
+  <link name="our_base">
     <inertial>
       <origin
         xyz="-0.000455135502731659 -0.000455135502731657 0.0118840855576371"
@@ -42,7 +40,7 @@
   </link>
   
 
-<link    name="link1">
+<link    name="our_link1">
     <inertial>
       <origin
         xyz="-4.34575289457643E-10 -0.00427280463172681 0.0636042623695707"
@@ -83,15 +81,15 @@
   </link>
   
 
-<joint    name="joint1"
+<joint    name="our_joint1"
     type="revolute">
     <origin
       xyz="0 0 0.024"
       rpy="0 0 0" />
     <parent
-      link="base" />
+      link="our_base" />
     <child
-      link="link1" />
+      link="our_link1" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -103,7 +101,7 @@
  
 
  <link
-    name="link1_1">
+    name="our_link1_1">
     <inertial>
       <origin
         xyz="2.22504903313166E-09 0.0146216613001546 0.143892593833407"
@@ -143,20 +141,20 @@
     </collision>
   </link>
   <joint
-    name="joint1_1"
+    name="our_joint1_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link1" />
+      link="our_link1" />
     <child
-      link="link1_1" />
+      link="our_link1_1" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="link2">
+    name="our_link2">
     <inertial>
       <origin
         xyz="4.34575280761671E-10 0.0636042623695707 -0.00427280463172687"
@@ -197,15 +195,15 @@
   </link>
   
 
-<joint    name="joint2"
+<joint    name="our_joint2"
     type="revolute">
     <origin
       xyz="0 -0.063 0.084"
       rpy="3.1416 0 0" />
     <parent
-      link="link1" />
+      link="our_link1" />
     <child
-      link="link2" />
+      link="our_link2" />
     <axis
       xyz="0 -1 0" />
     <limit
@@ -217,7 +215,7 @@
   
 
 <link
-    name="link2_1">
+    name="our_link2_1">
     <inertial>
       <origin
         xyz="-2.22504904035343E-09 0.143892593833407 0.0146216613001545"
@@ -257,22 +255,22 @@
     </collision>
   </link>
   <joint
-    name="joint2_1"
+    name="our_joint2_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link2" />
+      link="our_link2" />
     <child
-      link="link2_1" />
+      link="our_link2_1" />
     <axis
       xyz="0 0 0" />
   </joint>
 
 
   <link
-    name="link3">
+    name="our_link3">
     <inertial>
       <origin
         xyz="3.24930319308439E-16 2.4980018054066E-16 0.0179214050974561"
@@ -313,20 +311,20 @@
   </link>
  
 
- <joint    name="joint03"
+ <joint    name="our_joint03"
     type="fixed">
     <origin
       xyz="0 0.084 -0.063"
       rpy="3.14159265358979 0 0" />
     <parent
-      link="link2" />
+      link="our_link2" />
     <child
-      link="link3" />
+      link="our_link3" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="link4">
+    name="our_link4">
     <inertial>
       <origin
         xyz="3.23519848295084E-16 2.4980018054066E-16 0.0909999999999999"
@@ -367,22 +365,22 @@
   </link>
   
 
-<joint    name="joint04"
+<joint    name="our_joint04"
     type="fixed">
     <origin
       xyz="0 0 0.04"
       rpy="0 0 0" />
     <parent
-      link="link3" />
+      link="our_link3" />
     <child
-      link="link4" />
+      link="our_link4" />
     <axis
       xyz="0 0 0" />
   </joint>
   
 
 <link
-    name="link5">
+    name="our_link5">
     <inertial>
       <origin
         xyz="3.28646183330689E-16 2.4980018054066E-16 0.0220785949025439"
@@ -423,20 +421,20 @@
   </link>
  
 
- <joint    name="joint05"
+ <joint    name="our_joint05"
     type="fixed">
     <origin
       xyz="0 0 0.182"
       rpy="0 0 0" />
     <parent
-      link="link4" />
+      link="our_link4" />
     <child
-      link="link5" />
+      link="our_link5" />
     <axis
       xyz="0 0 0" />
   </joint>
   <link
-    name="link6">
+    name="our_link6">
     <inertial>
       <origin
         xyz="-4.3458E-10 0.020396 0.058727"
@@ -477,22 +475,22 @@
   </link>
   
 
-<joint    name="joint06"
+<joint    name="our_joint06"
     type="fixed">
     <origin
       xyz="0 0 0.0400000000000001"
       rpy="0 0 0" />
     <parent
-      link="link5" />
+      link="our_link5" />
     <child
-      link="link6" />
+      link="our_link6" />
     <axis
       xyz="0 0 0" />
   </joint>
   
 
 <link
-    name="link6_1">
+    name="our_link6_1">
     <inertial>
       <origin
         xyz="2.22504904716865E-09 -0.0598925938334073 0.0776216613001546"
@@ -532,22 +530,22 @@
     </collision>
   </link>
   <joint
-    name="joint6_1"
+    name="our_joint6_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link6" />
+      link="our_link6" />
     <child
-      link="link6_1" />
+      link="our_link6_1" />
     <axis
       xyz="0 0 0" />
   </joint>
  
 
  <link
-    name="link7">
+    name="our_link7">
     <inertial>
       <origin
         xyz="-1.27504249201245E-06 0.0410595253599417 0.10690144013463"
@@ -588,15 +586,15 @@
   </link>
   
 
-<joint    name="joint3"
+<joint    name="our_joint3"
     type="revolute">
     <origin
       xyz="0 0.084 0.063"
       rpy="0 0 0" />
     <parent
-      link="link6" />
+      link="our_link6" />
     <child
-      link="link7" />
+      link="our_link7" />
     <axis
       xyz="0 -1 0" />
     <limit
@@ -606,7 +604,7 @@
       velocity="0" />
   </joint>
   <link
-    name="link8">
+    name="our_link8">
     <inertial>
       <origin
         xyz="4.40683949447801E-09 -0.0144992946457997 0.0503915604928873"
@@ -646,22 +644,22 @@
     </collision>
   </link>
   <joint
-    name="joint8"
+    name="our_joint8"
     type="fixed">
     <origin
       xyz="0 0.0455000000000001 0.277999693224208"
       rpy="0 0 0" />
     <parent
-      link="link7" />
+      link="our_link7" />
     <child
-      link="link8" />
+      link="our_link8" />
     <axis
       xyz="0 0 0" />
   </joint>
   
 
 <link
-    name="link8_1">
+    name="our_link8_1">
     <inertial>
       <origin
         xyz="-1.99215418538098E-09 0.0454720700907633 0.0664623711755509"
@@ -701,22 +699,22 @@
     </collision>
   </link>
   <joint
-    name="joint8_1"
+    name="our_joint8_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link8" />
+      link="our_link8" />
     <child
-      link="link8_1" />
+      link="our_link8_1" />
     <axis
       xyz="0 0 0" />
   </joint>
  
 
  <link
-    name="link9">
+    name="our_link9">
     <inertial>
       <origin
         xyz="-4.40683947700495E-09 0.0503915604928872 -0.0144992946457996"
@@ -757,15 +755,15 @@
   </link>
  
 
- <joint    name="joint4"
+ <joint    name="our_joint4"
     type="revolute">
     <origin
       xyz="0 -0.0675 0.049"
       rpy="3.1416 0 0" />
     <parent
-      link="link8" />
+      link="our_link8" />
     <child
-      link="link9" />
+      link="our_link9" />
     <axis
       xyz="0 -1 0" />
     <limit
@@ -777,7 +775,7 @@
   
 
 <link
-    name="link9_1">
+    name="our_link9_1">
     <inertial>
       <origin
         xyz="1.99215414363585E-09 0.0664623711755509 0.0454720700907633"
@@ -817,22 +815,22 @@
     </collision>
   </link>
   <joint
-    name="joint9_1"
+    name="our_joint9_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link9" />
+      link="our_link9" />
     <child
-      link="link9_1" />
+      link="our_link9_1" />
     <axis
       xyz="0 0 0" />
   </joint>
  
 
  <link
-    name="link10">
+    name="our_link10">
     <inertial>
       <origin
         xyz="4.40683950608536E-09 -0.0144992946457997 0.0503915604928871"
@@ -873,15 +871,15 @@
   </link>
   
 
-<joint    name="joint5"
+<joint    name="our_joint5"
     type="revolute">
     <origin
       xyz="0 0.049 -0.0675"
       rpy="3.1416 0 0" />
     <parent
-      link="link9" />
+      link="our_link9" />
     <child
-      link="link10" />
+      link="our_link10" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -893,7 +891,7 @@
   
 
 <link
-    name="link10_1">
+    name="our_link10_1">
     <inertial>
       <origin
         xyz="-1.99215407189967E-09 0.0454720700907633 0.0664623711755509"
@@ -933,22 +931,22 @@
     </collision>
   </link>
   <joint
-    name="joint10_1"
+    name="our_joint10_1"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link10" />
+      link="our_link10" />
     <child
-      link="link10_1" />
+      link="our_link10_1" />
     <axis
       xyz="0 0 0" />
   </joint>
   
 
 <link
-    name="link11">
+    name="our_link11">
     <inertial>
       <origin
         xyz="9.97325440475552E-10 0.0170291728826431 4.16791800367244E-05"
@@ -989,15 +987,15 @@
   </link>
   
 
-<joint    name="joint6"
+<joint    name="our_joint6"
     type="revolute">
     <origin
       xyz="0 -0.0675 0.049"
       rpy="3.1416 0 0" />
     <parent
-      link="link10" />
+      link="our_link10" />
     <child
-      link="link11" />
+      link="our_link11" />
     <axis
       xyz="0 -1 0" />
     <limit
@@ -1007,7 +1005,7 @@
       velocity="0" />
   </joint>
   <link
-    name="link12">
+    name="our_link12">
     <inertial>
       <origin
         xyz="-9.70560652203519E-18 0.012 -0.0450000000000002"
@@ -1047,15 +1045,15 @@
     </collision>
   </link>
   <joint
-    name="joint12"
+    name="our_joint12"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="link11" />
+      link="our_link11" />
     <child
-      link="link12" />
+      link="our_link12" />
     <axis
       xyz="0 0 0" />
   </joint>
