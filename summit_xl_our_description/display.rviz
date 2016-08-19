@@ -62,6 +62,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        arm_camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         back_left_wheel:
           Alpha: 1
           Show Axes: false
@@ -112,6 +117,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        effector_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         front_left_wheel:
           Alpha: 1
           Show Axes: false
@@ -122,12 +132,96 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        gps_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hokuyo_arm_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         hokuyo_front_laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        our_link7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rplidar_laser_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rplidar_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tube_holder1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tube_holder2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tube_holder3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tube_holder4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        water_tank_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -143,6 +237,8 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        arm_camera:
+          Value: true
         back_left_wheel:
           Value: false
         back_right_wheel:
@@ -165,14 +261,50 @@ Visualization Manager:
           Value: false
         camera_rear_tilt_link:
           Value: false
+        effector_link:
+          Value: true
         front_left_wheel:
           Value: false
         front_right_wheel:
           Value: false
+        gps_link:
+          Value: true
+        hokuyo_arm_laser_link:
+          Value: true
         hokuyo_front_laser_link:
           Value: false
         imu_link:
           Value: false
+        our_base_link:
+          Value: true
+        our_link1:
+          Value: true
+        our_link2:
+          Value: true
+        our_link3:
+          Value: true
+        our_link4:
+          Value: true
+        our_link5:
+          Value: true
+        our_link6:
+          Value: true
+        our_link7:
+          Value: true
+        rplidar_laser_base_link:
+          Value: true
+        rplidar_laser_link:
+          Value: true
+        tube_holder1_link:
+          Value: true
+        tube_holder2_link:
+          Value: true
+        tube_holder3_link:
+          Value: true
+        tube_holder4_link:
+          Value: true
+        water_tank_base_link:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -198,9 +330,37 @@ Visualization Manager:
               {}
             front_right_wheel:
               {}
+            gps_link:
+              {}
             hokuyo_front_laser_link:
               {}
             imu_link:
+              {}
+            our_base_link:
+              our_link1:
+                our_link2:
+                  our_link3:
+                    our_link4:
+                      our_link5:
+                        our_link6:
+                          our_link7:
+                            effector_link:
+                              arm_camera:
+                                {}
+                              hokuyo_arm_laser_link:
+                                {}
+                    tube_holder2_link:
+                      {}
+                    tube_holder3_link:
+                      {}
+                  tube_holder1_link:
+                    {}
+                tube_holder4_link:
+                  {}
+            rplidar_laser_base_link:
+              rplidar_laser_link:
+                {}
+            water_tank_base_link:
               {}
       Update Interval: 0
       Value: true
@@ -228,22 +388,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.11353
+      Distance: 1.41637
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.213227
-        Y: -0.0557737
-        Z: 1.26223
+        X: 0.405326
+        Y: -0.116164
+        Z: 1.03139
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: -0.030202
+      Pitch: 1.2798
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.422217
+      Yaw: 3.97039
     Saved: ~
 Window Geometry:
   Displays:

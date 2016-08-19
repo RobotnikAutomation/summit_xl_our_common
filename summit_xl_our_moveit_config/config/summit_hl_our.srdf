@@ -26,24 +26,17 @@
         <joint name="our_joint5" value="0" />
         <joint name="our_joint6" value="0" />
     </group_state>
-    <group_state name="right" group="our_arm">
-        <joint name="our_joint4" value="0" />
-        <joint name="our_joint5" value="0" />
-        <joint name="our_joint6" value="0" />
-    </group_state>
-    <group_state name="left" group="our_arm">
-        <joint name="our_joint4" value="0" />
-        <joint name="our_joint5" value="0" />
-        <joint name="our_joint6" value="0" />
-    </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="planar" parent_frame="odom" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_camera" link2="back_left_wheel" reason="Never" />
     <disable_collisions link1="arm_camera" link2="base_footprint" reason="Never" />
+    <disable_collisions link1="arm_camera" link2="base_link" reason="Never" />
     <disable_collisions link1="arm_camera" link2="camera_front_link" reason="Never" />
     <disable_collisions link1="arm_camera" link2="camera_rear_link" reason="Never" />
     <disable_collisions link1="arm_camera" link2="effector_link" reason="Adjacent" />
+    <disable_collisions link1="arm_camera" link2="front_left_wheel" reason="Never" />
+    <disable_collisions link1="arm_camera" link2="gps_link" reason="Never" />
     <disable_collisions link1="arm_camera" link2="hokuyo_arm_laser_link" reason="Default" />
     <disable_collisions link1="arm_camera" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="arm_camera" link2="imu_link" reason="Never" />
@@ -67,15 +60,13 @@
     <disable_collisions link1="back_left_wheel" link2="camera_rear_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="front_right_wheel" reason="Never" />
-    <disable_collisions link1="back_left_wheel" link2="hokuyo_arm_laser_link" reason="Never" />
+    <disable_collisions link1="back_left_wheel" link2="gps_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="imu_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="our_base_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="our_link1" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="our_link2" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="our_link3" reason="Never" />
-    <disable_collisions link1="back_left_wheel" link2="our_link4" reason="Never" />
-    <disable_collisions link1="back_left_wheel" link2="our_link5" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="tube_holder2_link" reason="Never" />
@@ -88,13 +79,13 @@
     <disable_collisions link1="back_right_wheel" link2="camera_rear_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="front_right_wheel" reason="Never" />
+    <disable_collisions link1="back_right_wheel" link2="gps_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="imu_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="our_base_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="our_link1" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="our_link2" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="our_link3" reason="Never" />
-    <disable_collisions link1="back_right_wheel" link2="our_link5" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="tube_holder2_link" reason="Never" />
@@ -107,6 +98,7 @@
     <disable_collisions link1="base_footprint" link2="effector_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="base_footprint" link2="front_right_wheel" reason="Never" />
+    <disable_collisions link1="base_footprint" link2="gps_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="hokuyo_arm_laser_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="base_footprint" link2="imu_link" reason="Never" />
@@ -128,21 +120,21 @@
     <disable_collisions link1="base_link" link2="camera_rear_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="front_left_wheel" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="front_right_wheel" reason="Adjacent" />
+    <disable_collisions link1="base_link" link2="gps_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="hokuyo_front_laser_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="imu_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="our_base_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="our_link1" reason="Never" />
     <disable_collisions link1="base_link" link2="our_link2" reason="Never" />
-    <disable_collisions link1="base_link" link2="our_link3" reason="Never" />
     <disable_collisions link1="base_link" link2="rplidar_laser_base_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="base_link" link2="tube_holder2_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="base_link" link2="tube_holder4_link" reason="Never" />
     <disable_collisions link1="base_link" link2="water_tank_base_link" reason="Adjacent" />
     <disable_collisions link1="camera_front_link" link2="camera_rear_link" reason="Never" />
     <disable_collisions link1="camera_front_link" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="camera_front_link" link2="front_right_wheel" reason="Never" />
+    <disable_collisions link1="camera_front_link" link2="gps_link" reason="Never" />
     <disable_collisions link1="camera_front_link" link2="hokuyo_front_laser_link" reason="Default" />
     <disable_collisions link1="camera_front_link" link2="imu_link" reason="Never" />
     <disable_collisions link1="camera_front_link" link2="our_base_link" reason="Never" />
@@ -162,6 +154,7 @@
     <disable_collisions link1="camera_rear_link" link2="effector_link" reason="Never" />
     <disable_collisions link1="camera_rear_link" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="camera_rear_link" link2="front_right_wheel" reason="Never" />
+    <disable_collisions link1="camera_rear_link" link2="gps_link" reason="Never" />
     <disable_collisions link1="camera_rear_link" link2="hokuyo_arm_laser_link" reason="Never" />
     <disable_collisions link1="camera_rear_link" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="camera_rear_link" link2="imu_link" reason="Never" />
@@ -180,7 +173,6 @@
     <disable_collisions link1="effector_link" link2="hokuyo_arm_laser_link" reason="Adjacent" />
     <disable_collisions link1="effector_link" link2="imu_link" reason="Never" />
     <disable_collisions link1="effector_link" link2="our_base_link" reason="Never" />
-    <disable_collisions link1="effector_link" link2="our_link1" reason="Never" />
     <disable_collisions link1="effector_link" link2="our_link3" reason="Never" />
     <disable_collisions link1="effector_link" link2="our_link4" reason="Never" />
     <disable_collisions link1="effector_link" link2="our_link5" reason="Never" />
@@ -191,22 +183,21 @@
     <disable_collisions link1="effector_link" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="effector_link" link2="tube_holder4_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="front_right_wheel" reason="Never" />
+    <disable_collisions link1="front_left_wheel" link2="gps_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="imu_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="our_base_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="our_link1" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="our_link2" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="our_link3" reason="Never" />
-    <disable_collisions link1="front_left_wheel" link2="our_link4" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="our_link5" reason="Never" />
-    <disable_collisions link1="front_left_wheel" link2="our_link6" reason="Never" />
-    <disable_collisions link1="front_left_wheel" link2="our_link7" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="tube_holder2_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="tube_holder4_link" reason="Never" />
     <disable_collisions link1="front_left_wheel" link2="water_tank_base_link" reason="Never" />
+    <disable_collisions link1="front_right_wheel" link2="gps_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="imu_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="our_base_link" reason="Never" />
@@ -220,6 +211,17 @@
     <disable_collisions link1="front_right_wheel" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="tube_holder4_link" reason="Never" />
     <disable_collisions link1="front_right_wheel" link2="water_tank_base_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="hokuyo_front_laser_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="imu_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="our_base_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="our_link1" reason="Never" />
+    <disable_collisions link1="gps_link" link2="our_link4" reason="Never" />
+    <disable_collisions link1="gps_link" link2="our_link5" reason="Never" />
+    <disable_collisions link1="gps_link" link2="our_link7" reason="Never" />
+    <disable_collisions link1="gps_link" link2="rplidar_laser_base_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="tube_holder1_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="tube_holder4_link" reason="Never" />
+    <disable_collisions link1="gps_link" link2="water_tank_base_link" reason="Default" />
     <disable_collisions link1="hokuyo_arm_laser_link" link2="hokuyo_front_laser_link" reason="Never" />
     <disable_collisions link1="hokuyo_arm_laser_link" link2="imu_link" reason="Never" />
     <disable_collisions link1="hokuyo_arm_laser_link" link2="our_base_link" reason="Never" />
@@ -303,7 +305,6 @@
     <disable_collisions link1="our_link3" link2="our_link5" reason="Never" />
     <disable_collisions link1="our_link3" link2="our_link6" reason="Never" />
     <disable_collisions link1="our_link3" link2="our_link7" reason="Never" />
-    <disable_collisions link1="our_link3" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="our_link3" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="our_link3" link2="tube_holder2_link" reason="Adjacent" />
     <disable_collisions link1="our_link3" link2="tube_holder3_link" reason="Adjacent" />
@@ -316,7 +317,6 @@
     <disable_collisions link1="our_link4" link2="tube_holder2_link" reason="Never" />
     <disable_collisions link1="our_link4" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="our_link4" link2="tube_holder4_link" reason="Never" />
-    <disable_collisions link1="our_link4" link2="water_tank_base_link" reason="Never" />
     <disable_collisions link1="our_link5" link2="our_link6" reason="Adjacent" />
     <disable_collisions link1="our_link5" link2="our_link7" reason="Never" />
     <disable_collisions link1="our_link5" link2="rplidar_laser_base_link" reason="Never" />
@@ -324,20 +324,17 @@
     <disable_collisions link1="our_link5" link2="tube_holder2_link" reason="Never" />
     <disable_collisions link1="our_link5" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="our_link5" link2="tube_holder4_link" reason="Never" />
-    <disable_collisions link1="our_link5" link2="water_tank_base_link" reason="Never" />
     <disable_collisions link1="our_link6" link2="our_link7" reason="Adjacent" />
     <disable_collisions link1="our_link6" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="our_link6" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="our_link6" link2="tube_holder2_link" reason="Never" />
     <disable_collisions link1="our_link6" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="our_link6" link2="tube_holder4_link" reason="Never" />
-    <disable_collisions link1="our_link6" link2="water_tank_base_link" reason="Never" />
     <disable_collisions link1="our_link7" link2="rplidar_laser_base_link" reason="Never" />
     <disable_collisions link1="our_link7" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="our_link7" link2="tube_holder2_link" reason="Never" />
     <disable_collisions link1="our_link7" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="our_link7" link2="tube_holder4_link" reason="Never" />
-    <disable_collisions link1="our_link7" link2="water_tank_base_link" reason="Never" />
     <disable_collisions link1="rplidar_laser_base_link" link2="tube_holder1_link" reason="Never" />
     <disable_collisions link1="rplidar_laser_base_link" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="rplidar_laser_base_link" link2="tube_holder4_link" reason="Never" />
@@ -348,5 +345,4 @@
     <disable_collisions link1="tube_holder2_link" link2="tube_holder3_link" reason="Never" />
     <disable_collisions link1="tube_holder2_link" link2="tube_holder4_link" reason="Never" />
     <disable_collisions link1="tube_holder3_link" link2="tube_holder4_link" reason="Never" />
-    <disable_collisions link1="tube_holder4_link" link2="water_tank_base_link" reason="Never" />
 </robot>
