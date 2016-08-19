@@ -57,41 +57,36 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        All Links Enabled: false
+        All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        arm_camera:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         back_left_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         back_right_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         camera_front_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         camera_front_pan_link:
           Alpha: 1
           Show Axes: false
@@ -108,7 +103,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         camera_rear_pan_link:
           Alpha: 1
           Show Axes: false
@@ -117,22 +112,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        effector_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         front_left_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         front_right_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        hokuyo_arm_laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -141,117 +126,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
+          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: false
-        our_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link10:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link10_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link12:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link1_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link2_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link6_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link8_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link9:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        our_link9_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        rp_lidar_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
-        water_tank_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -263,8 +143,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        arm_camera:
-          Value: true
         back_left_wheel:
           Value: false
         back_right_wheel:
@@ -287,59 +165,13 @@ Visualization Manager:
           Value: false
         camera_rear_tilt_link:
           Value: false
-        effector_link:
-          Value: true
         front_left_wheel:
           Value: false
         front_right_wheel:
           Value: false
-        hokuyo_arm_laser_link:
-          Value: true
         hokuyo_front_laser_link:
           Value: false
         imu_link:
-          Value: false
-        our_base:
-          Value: false
-        our_link1:
-          Value: false
-        our_link10:
-          Value: false
-        our_link10_1:
-          Value: false
-        our_link11:
-          Value: false
-        our_link12:
-          Value: false
-        our_link1_1:
-          Value: false
-        our_link2:
-          Value: false
-        our_link2_1:
-          Value: false
-        our_link3:
-          Value: false
-        our_link4:
-          Value: false
-        our_link5:
-          Value: false
-        our_link6:
-          Value: false
-        our_link6_1:
-          Value: false
-        our_link7:
-          Value: false
-        our_link8:
-          Value: false
-        our_link8_1:
-          Value: false
-        our_link9:
-          Value: false
-        our_link9_1:
-          Value: false
-        rp_lidar_link:
-          Value: false
-        water_tank_base_link:
           Value: false
       Marker Scale: 1
       Name: TF
@@ -370,47 +202,12 @@ Visualization Manager:
               {}
             imu_link:
               {}
-            our_base:
-              our_link1:
-                our_link1_1:
-                  {}
-                our_link2:
-                  our_link2_1:
-                    {}
-                  our_link3:
-                    our_link4:
-                      our_link5:
-                        our_link6:
-                          our_link6_1:
-                            {}
-                          our_link7:
-                            our_link8:
-                              our_link8_1:
-                                {}
-                              our_link9:
-                                our_link10:
-                                  our_link10_1:
-                                    {}
-                                  our_link11:
-                                    effector_link:
-                                      arm_camera:
-                                        {}
-                                      hokuyo_arm_laser_link:
-                                        {}
-                                    our_link12:
-                                      {}
-                                our_link9_1:
-                                  {}
-            rp_lidar_link:
-              {}
-            water_tank_base_link:
-              {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: back_left_wheel
     Frame Rate: 30
   Name: root
   Tools:
@@ -431,7 +228,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.834769
+      Distance: 4.11353
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -443,10 +240,10 @@ Visualization Manager:
         Z: 1.26223
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.769798
+      Pitch: -0.030202
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.74722
+      Yaw: 0.422217
     Saved: ~
 Window Geometry:
   Displays:

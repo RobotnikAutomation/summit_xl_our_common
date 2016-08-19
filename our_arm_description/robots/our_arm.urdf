@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<robot name="our_arm_i5" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+	
+  <xacro:property name="M_PI" value="3.14151691"/>
+  
+  <xacro:macro name="our_arm_i5" params="prefix parent *origin">
+  
+	  <link name="${prefix}base_link">
+		<visual>
+		  <origin xyz="0 0 0" roy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OUR2-base.dae"/>
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0.0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OUR2-base.dae"/>
+		  </geometry>
+		</collision>
+	  </link>
+	   
+	   <joint name="${prefix}base_joint" type="fixed">
+				<insert_block name="origin"/>
+		  <parent link="${parent}"/>
+		  <child link="${prefix}base_link"/>
+	   </joint>
+	   
+	  <link name="${prefix}link1">
+		<visual>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link1.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link1.dae"/>
+		  </geometry>
+		</collision>
+	  </link>
+	  
+	  <joint name="${prefix}joint1" type="revolute">
+		<origin xyz="0 0 0.0985" rpy="0 0 0" />
+		<parent link="${prefix}base_link" />
+		<child link="${prefix}link1" />
+		<axis xyz="0 0 1" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+	 
+	  <link name="${prefix}link2">
+		<visual>
+		  <origin
+			xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh
+			  filename="package://our_arm_description/meshes/OURII-link2.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin
+			xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh
+			  filename="package://our_arm_description/meshes/OURII-link2.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+	  
+	  <joint name="${prefix}joint2" type="revolute">
+		<origin xyz="0.1405 0 0" rpy="0 0 0" />
+		<parent link="${prefix}link1" />
+		<child link="${prefix}link2" />
+		<axis xyz="1 0 0" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+	  
+	  <link name="${prefix}link3">
+		<visual>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh
+			  filename="package://our_arm_description/meshes/OURII-link3.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh
+			  filename="package://our_arm_description/meshes/OURII-link3.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+
+	  <joint name="${prefix}joint3" type="revolute">
+		<origin xyz="-0.1215 0 0.408" rpy="0 0 0" />
+		<parent link="${prefix}link2" />
+		<child link="${prefix}link3" />
+		<axis xyz="-1 0 0" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+	  
+	  <link name="${prefix}link4">
+		<visual>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link4.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link4.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+	  
+	  <joint name="${prefix}joint4" type="revolute">
+		<origin xyz="0 0 0.376" rpy="0 0 0" />
+		<parent link="${prefix}link3" />
+		<child link="${prefix}link4" />
+		<axis xyz="1 0 0" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+	  
+	  <link name="${prefix}link5">
+		<visual>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link5.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link5.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+	 
+	  <joint name="${prefix}joint4_5" type="fixed">
+		<origin xyz="0.1025 0 0" rpy="0 0 0" />
+		<parent link="${prefix}link4" />
+		<child link="${prefix}link5" />
+	  </joint>
+
+	  <link name="${prefix}link6">
+		<visual>
+		  <origin
+			xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link6.dae" />
+		  </geometry>      
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="0 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OURII-link6.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+	 
+	  <joint name="${prefix}joint5" type="revolute">
+		<origin xyz="0 0 0.1025" rpy="0 0 0" />
+		<parent link="${prefix}link5" />
+		<child link="${prefix}link6" />
+		<axis xyz="0 0 1" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+
+	  <link name="${prefix}link7">
+		<visual>
+		  <origin xyz="0 0 0" rpy="${M_PI} 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OUR2-terminal.dae" />
+		  </geometry>
+		</visual>
+		<collision>
+		  <origin xyz="0 0 0" rpy="${M_PI} 0 0" />
+		  <geometry>
+			<mesh filename="package://our_arm_description/meshes/OUR2-terminal.dae" />
+		  </geometry>
+		</collision>
+	  </link>
+	 
+	  <joint name="${prefix}joint6" type="revolute">
+		<origin xyz="0.0545 0 0" rpy="0 0 0" />
+		<parent link="${prefix}link6" />
+		<child link="${prefix}link7" />
+		<axis xyz="1 0 0" />
+		<limit lower="-1.57" upper="1.57" effort="0" velocity="0" />
+	  </joint>
+	  
+  </xacro:macro> 
+  
+</robot>
