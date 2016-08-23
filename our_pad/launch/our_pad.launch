@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- joy node -->
+  <node pkg="joy" type="joy_node" name="ps3_joy" output="screen" respawn="true">
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+    <param name="autorepeat_rate" value="10.0" type="double" />
+  </node>
+  
+  <!-- Parameters -->
+  <rosparam command="load" file="$(find our_pad)/config/ps3.yaml" />
+  <node name="our_pad" pkg="our_pad" type="our_pad" output="screen"/>
+  
+</launch>
