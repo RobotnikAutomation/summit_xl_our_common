@@ -41,9 +41,9 @@
 #include <std_msgs/Int32.h>
 
 #define DEFAULT_NUM_OF_BUTTONS		20
-#define DEFAULT_SCALE_ANGULAR		1.0
+#define DEFAULT_SCALE_ANGULAR		0.5
 #define DEFAULT_AXIS_ANGULAR_X		1
-#define MAX_JOINTS					6
+#define MAX_JOINTS			6
 
 class OurPad
 {
@@ -117,7 +117,7 @@ OurPad::OurPad() : pnh_("~")
 	joint_state_sub_ = nh_.subscribe<sensor_msgs::JointState>("/joint_states", 1, &OurPad::jointStateCallback, this);
 
 	// Publishes into the arm controller
-	arm_ref_joint_pub_ = nh_.advertise<sensor_msgs::JointState>("/joint_commands", 1);
+	arm_ref_joint_pub_ = nh_.advertise<sensor_msgs::JointState>("/joint_command", 1);
 	  		        
     // Joint selected by default
     iSelectedJoint_ = 6;   // 4,5,6 are less dangerous    	
@@ -137,7 +137,7 @@ void OurPad::jointStateCallback(const sensor_msgs::JointStateConstPtr& msg)
   if (all_kind_of_msg.name[0]=="our_joint1") {
 	joint_state_ = *msg;
 	read_state_ = true;
-	ROS_INFO("Received a our joint_state");
+	// ROS_INFO("Received a our joint_state");
 	}
 }
 
@@ -162,8 +162,6 @@ void OurPad::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 				ROS_INFO("Selected Joint = %d", iSelectedJoint_);
 				}
 		}else{		
-				// Debug				
-				//read_state_ = true;
 								
 				if (read_state_) {				
 					sensor_msgs::JointState joint_state_command;	
@@ -189,16 +187,6 @@ void OurPad::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 					joint_state_command.name[4] = "our_joint5";
 					joint_state_command.name[5] = "our_joint6";
 		
-					// Debug
-					/*
-					joint_state_command.position[0] = 0.0;
-					joint_state_command.position[1] = 0.0;
-					joint_state_command.position[2] = 0.0;
-					joint_state_command.position[3] = 0.0;
-					joint_state_command.position[4] = 0.0;
-					joint_state_command.position[5] = 0.0;
-					*/
-
 					joint_state_command.position = joint_state_.position;  // update only if the joint_state measured is the arm state !
 						
 					joint_state_command.velocity[0] = 0.0;
@@ -220,9 +208,9 @@ void OurPad::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 					double hz = 10.0;  // Joystick frequency
 					double scaled_ref = ref / hz; // convert to increments per period
 					// saturation
-					if (scaled_ref > 0.1) scaled_ref = 0.1;
-					if (scaled_ref < -0.1) scaled_ref = -0.1;					
-					
+					if (scaled_ref > 0.025) scaled_ref = 0.025; // *f = [rad/s]
+					if (scaled_ref < -0.025) scaled_ref = -0.025; 					
+	
 					if (iSelectedJoint_==1) joint_state_command.position[0] = joint_state_command.position[0] + scaled_ref;
 					if (iSelectedJoint_==2) joint_state_command.position[1] = joint_state_command.position[1] + scaled_ref;
 					if (iSelectedJoint_==3) joint_state_command.position[2] = joint_state_command.position[2] + scaled_ref;
@@ -231,7 +219,9 @@ void OurPad::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 					if (iSelectedJoint_==6) joint_state_command.position[5] = joint_state_command.position[5] + scaled_ref;
 				
 					// Publish jbj ref message				
-					// arm_ref_joint_pub_.publish(joint_state_command);	            		
+					arm_ref_joint_pub_.publish(joint_state_command);
+					
+					/*	            		
 					ROS_INFO("js [ %5.2f %5.2f %5.2f %5.2f %5.2f %5.2f ]",  
 						joint_state_command.position[0],
 						joint_state_command.position[1],
@@ -239,12 +229,12 @@ void OurPad::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 						joint_state_command.position[3],
 						joint_state_command.position[4],
 						joint_state_command.position[5]);
+					*/
 					
-					
-					} // 
-				}
-			bRegisteredButtonEvent[button_up_] = false;
-			bRegisteredButtonEvent[button_down_] = false;			
+					} // 				
+				bRegisteredButtonEvent[button_up_] = false;
+				bRegisteredButtonEvent[button_down_] = false;			
+                        }
 		}
 }	
 
